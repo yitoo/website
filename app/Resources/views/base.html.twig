@@ -1,12 +1,130 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+
+    <meta charset="UTF-8">
+    {% set title = "Développement web & mobile, formation et expertise informatique" %}
+    {% set description = "Nous concevons et réalisons pour nos clients des applications web et mobile professionnelles en utilisant les technologies les mieux adaptées à leurs besoins et leur budget..." %}
+
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ description }}{% endblock %}">
+    <meta name="author" content="Yitoo">
+    <meta property="og:title" content="{% block ogTitle %}{{ title }}{% endblock %}" />
+    <meta property="og:type" content="{% block ogType %}website{% endblock %}" />
+    <meta property="og:url" content="{% block ogUrl %}https://yitoo.io{% endblock %}" />
+    <meta property="og:image" content="{% block ogImage %}{{ app.request.schemeAndHttpHost ~ asset('images/yitoo-logo_deg_400x400.png') }}{% endblock %}" />
+    <meta property="og:description" content="{% block ogDescription %}{{ description }}{% endblock %}" />
+    <meta property="og:site_name" content="{% block ogSiteName %}Yitoo{% endblock %}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% block twitterTitle %}{{ title }}{% endblock %}" />
+    <meta name="twitter:url" content="{% block twitterUrl %}https://yitoo.io{% endblock %}" />
+    <meta name="twitter:description" content="{% block twitterDescription %}{{ description }}{% endblock %}" />
+    <meta name="twitter:image" content="{% block twitterImage %}{{ app.request.schemeAndHttpHost ~ asset('images/yitoo-logo_deg_400x400.png') }}{% endblock %}" />
+    <meta name="twitter:image:alt" content="{% block twitterAltImage %}Yitoo logo{% endblock %}">
+    <meta name="twitter:site" content="@yitooLabs">
+    <meta name="twitter:creator" content="Yitoo">
+    <meta name="msvalidate.01" content="C84B597FCF46429DF534C0B1F827F0D1" />
+
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{{ asset('dist/css/styles.min.css') }}">
+        <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300,500' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {% endblock %}
+
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="{{ asset('dist/js/ie.min.js') }}"></script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon/favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('favicon/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
+    <link rel="mask-icon" href="{{ asset('favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="shortcut icon" href="{{ asset('favicon/favicon.ico') }}">
+    <meta name="apple-mobile-web-app-title" content="Yitoo">
+    <meta name="application-name" content="Yitoo">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="{{ asset('/favicon/mstile-144x144.png') }}">
+    <meta name="msapplication-config" content="{{ asset('/favicon/browserconfig.xml') }}">
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-91866667-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:416831,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <script type="application/ld+json">
+         { "@context": "http://schema.org",
+             "@type": "Organization",
+             "name": "Yitoo",
+             "legalName" : "Yitoo SAS",
+             "url": "yitoo.io",
+             "logo": "{{ app.request.schemeAndHttpHost ~ asset('images/yitoo-logo_deg_400x400.png') }}",
+             "foundingDate": "2017",
+             "founders": [
+                 {
+                     "@type": "Person",
+                     "name": "Abdoulaye Barry",
+                     "jobTitle": "CEO"
+                 },
+                 {
+                     "@type": "Person",
+                     "name": "Romain Derocle",
+                     "jobTitle": "CTO"
+                 },
+                 {
+                     "@type": "Person",
+                     "name": "Divan Kandiah",
+                     "jobTitle": "Software engineer"
+                 }
+             ],
+             "address": {
+                 "@type": "PostalAddress",
+                 "streetAddress": "161 Boulevard Charles De Gaulle",
+                 "addressLocality": "92700",
+                 "postalCode": "Colombes",
+                 "addressCountry": "FR"
+             },
+             "contactPoint": {
+                 "@type": "ContactPoint",
+                 "contactType": "customer support",
+                 "telephone": "[+33 1 86 95 96 04]",
+                 "email": "contact@yitoo.io"
+             },
+             "sameAs": [
+                 "https://twitter.com/yitooLabs",
+                 "https://www.facebook.com/yitooLabs/",
+                 "https://www.linkedin.com/company-beta/17953198/",
+                 "https://www.instagram.com/yitoolabs/"
+             ]}
+    </script>
+</head>
+
+<body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
