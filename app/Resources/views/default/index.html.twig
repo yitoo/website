@@ -1,4 +1,18 @@
 {% extends 'base.html.twig' %}
+{% set title = 'Développement web et mobile sur mesure' %}
+{% set description = 'Nous concevons et réalisons des applications web et mobile sur mesure pour nos clients...' %}
+
+{% set pageTitle = "Expertises" %}
+{% set pageUrl = url('homepage') %}
+{% set expertiseDescription = "Expertise technique, Développement Web & Mobile, Formation, Intégration de solutions, Yitoo vous accopagne tout au long de votre projet digital..."%}
+{% block title %}{{ pageTitle }}{% endblock %}
+{% block ogTitle %}{{ pageTitle }}{% endblock %}
+{% block ogUrl %}{{ pageUrl }}{% endblock %}
+{% block twitterTitle %}{{ pageTitle }}{% endblock %}
+{% block twitterUrl %}{{ pageUrl }}{% endblock %}
+{% block description %}{{ expertiseDescription }}{% endblock %}
+{% block ogDescription %}{{ expertiseDescription }}{% endblock %}
+{% block twitterDescription %}{{ expertiseDescription }}{% endblock %}
 
 {% block body %}
     <div id="wrapper">
