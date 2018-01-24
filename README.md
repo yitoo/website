@@ -1,3 +1,5 @@
+https://travis-ci.org/yitoo/website.svg?branch=master
+
 yitoo
 =====
 
