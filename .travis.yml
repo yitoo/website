@@ -1,0 +1,40 @@
+# Project language
+language: php
+
+# Start mysql service
+services:
+
+
+# Cache composer packages so "composer install" is faster
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+# Settings version PHP
+php:
+   - 7.1
+
+# Define an environment variable
+env:
+  - SYMFONY_VERSION="3.3.*" DB=mysql
+
+# Update composer
+before-install:
+  - ./composer.phar self-update
+
+# Install composer dependencies,
+# Create database, schema and fixtures
+install:
+  - ./composer.phar install
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
+#  - php bin/console doctrine:database:create --env=test
+#  - php bin/console doctrine:schema:create --env=test
+#  - php bin/console doctrine:fixtures:load -n --env=test
+
+# Run script
+script:
+  - ./vendor/bin/phpunit
+
+# After a build, send email notification with the build results
+notifications:
+  email: contact@abdoulayebarry.com
