@@ -1,0 +1,12 @@
+deploy:
+    language: php
+    php:
+        - 7.1.13
+    before_script:
+        - curl -LO https://deployer.org/deployer.phar
+    install:
+        - php deployer.phar deploy recette
+    branches:
+        only:
+            - release/.*
+

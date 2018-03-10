@@ -1,0 +1,4 @@
+app_front_all:
+    type: 'annotation'
+    prefix: '/'
+    resource: "../src/Controller"

@@ -1,0 +1,28 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    recette:
+                        password: '%env(RECETTE_PASSWORD)%'
+                        roles: 'ROLE_ADMIN'
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            http_basic: ~
+
+    access_control:
+#        - { host: '@.*recette.*@', path: ^/.*, roles: ROLE_ADMIN }
+        - { path: ^/.*, roles: ROLE_ADMIN }
+#        - { path: ^/.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
