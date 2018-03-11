@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Yitoo Technology : Cabinet de conseil et de d'expertise IT{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <style type="text/css">
+
+            #nav-bar {
+                display: flex;
+                justify-content: space-around;
+            }
+            #nav-bar ul li {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="nav-bar">
+            <ul>
+                <li><a href="{{ path('app_about_us') }}">Nous</a></li>
+                <li><a href="{{ path('app_expertise') }}">Nos expertises</a></li>
+                <li><a href="{{ path('app_studio') }}">Le studio</a></li>
+                <li><a href="{{ path('app_yitoo_labs') }}">Yitoo Labs</a></li>
+                <li><a href="{{ path('app_join_us') }}">Jobs</a></li>
+                <li><a href="{{ path('app_contact_us') }}">Contact</a></li>
+            </ul>
+        </header>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
