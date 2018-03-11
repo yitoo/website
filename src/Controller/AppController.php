@@ -28,7 +28,7 @@ class AppController extends Controller
     }
 
     /**
-     * @Route("/expertises", name="app_expertise")
+     * @Route("/nos-expertises", name="app_expertise")
      */
     public function expertise()
     {
@@ -48,7 +48,7 @@ class AppController extends Controller
     }
 
     /**
-     * @Route("/innovation", name="app_yitoo_labs")
+     * @Route("/innovations", name="app_yitoo_labs")
      */
     public function yitooLabs()
     {
