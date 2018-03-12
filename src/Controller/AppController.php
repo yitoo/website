@@ -12,9 +12,7 @@ class AppController extends Controller
      */
     public function index()
     {
-        return $this->render('app/index.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
+        return $this->render('app/index.html.twig');
     }
 
     /**
@@ -22,9 +20,7 @@ class AppController extends Controller
      */
     public function aboutUs()
     {
-        return $this->render('app/about.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
+        return $this->render('app/about.html.twig');
     }
 
     /**
@@ -32,9 +28,7 @@ class AppController extends Controller
      */
     public function expertise()
     {
-        return $this->render('app/expertise.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
+        return $this->render('app/expertise.html.twig');
     }
 
     /**
@@ -42,9 +36,7 @@ class AppController extends Controller
      */
     public function studio()
     {
-        return $this->render('app/studio.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
+        return $this->render('app/studio.html.twig');
     }
 
     /**
@@ -52,9 +44,7 @@ class AppController extends Controller
      */
     public function yitooLabs()
     {
-        return $this->render('app/labs.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
+        return $this->render('app/labs.html.twig');
     }
 
     /**
@@ -62,9 +52,7 @@ class AppController extends Controller
      */
     public function jobs()
     {
-        return $this->render('app/jobs.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
+        return $this->render('app/jobs.html.twig');
     }
 
     /**
@@ -72,8 +60,6 @@ class AppController extends Controller
      */
     public function contact()
     {
-        return $this->render('app/contact.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
+        return $this->render('app/contact.html.twig');
     }
 }
